@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
+import { Redirect, Link } from 'react-router-dom';
 import axios from 'axios';
-import { Redirect } from 'react-router-dom';
 
 function NewGenre() {
   const [name, setName] = useState('');
@@ -35,7 +35,10 @@ function NewGenre() {
           <label htmlFor="name">Nome</label>
           <input type="text" value={name} className='form-control' id='name' onChange={onChange} />
         </div>
-        <button type='button' className='btn btn-primary' onClick={saveGenre}>Salvar</button>
+        <div>
+          <Link to='/generos' className='btn btn-dark'>Voltar</Link>
+          <button type='button' className='btn btn-primary' onClick={saveGenre}>Salvar</button>
+        </div>
       </form>
     </div>
   );

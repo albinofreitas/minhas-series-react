@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom'
 import axios from 'axios';
 
 function Genres() {
@@ -17,7 +18,9 @@ function Genres() {
       <tr key={genres.id}>
         <th scope='row'>{genres.id}</th>
         <td>{genres.name}</td>
-        <td></td>
+        <td>
+          <button className="btn btn-danger brn-sm">Exluir</button>
+        </td>
       </tr>
     );
   }
@@ -26,6 +29,7 @@ function Genres() {
     return (
       <div className='container'>
         <h1>Gêneros</h1>
+        <Link className="btn btn-primary" to='/generos/novo'>Novo Gênero</Link>
         <div className='alert alert-info' role='alert'>
           Você não possui nenhum gênero cadastrado ainda.
         </div>
@@ -36,6 +40,7 @@ function Genres() {
   return (
     <div className='container'>
       <h1>Gêneros</h1>
+      <Link className="btn btn-primary" to='/generos/novo'>Novo Gênero</Link>
       <table className='table table-dark'>
         <thead>
           <tr>
