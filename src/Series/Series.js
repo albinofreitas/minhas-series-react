@@ -29,7 +29,7 @@ function Series() {
         <td>{serie.name}</td>
         <td>
           <div className='btn-group'>
-            <Link to={'/series/' + serie.id} className='btn btn-primary btn-sm'>Editar</Link>
+            <Link to={'/series/' + serie.id} className='btn btn-primary btn-sm'>Infos</Link>
             <button className='btn btn-danger btn-sm' onClick={() => deleteSerie(serie.id)}>Exluir</button>
           </div>
         </td>
@@ -38,7 +38,7 @@ function Series() {
   }
 
   return (
-    <div>
+    <div className='container'>
       <div className='row'>
         <div className='col-12 mt-2'>
           <h1>Séries</h1>

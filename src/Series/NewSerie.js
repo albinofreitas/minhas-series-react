@@ -27,7 +27,7 @@ function NewSerie() {
   }
 
   return (
-    <div>
+    <div className='container'>
       <h1>Serie</h1>
 
       <form action=''>
@@ -36,8 +36,8 @@ function NewSerie() {
           <input type="text" value={name} className='form-control' id='name' onChange={onChange} />
         </div>
         <div>
-          <Link to='/series' className='btn btn-dark'>Voltar</Link>
-          <button type='button' className='btn btn-primary' onClick={saveSerie}>Salvar</button>
+          <Link to='/series' className='btn btn-dark mr-2'>Voltar</Link>
+          <button type='button' className='btn btn-primary mr-2' onClick={saveSerie}>Salvar</button>
         </div>
       </form>
     </div>

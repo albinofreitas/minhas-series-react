@@ -38,7 +38,7 @@ function Genres() {
   }
 
   return (
-    <div>
+    <div className='container'>
       <div className='row'>
         <div className='col-12 mt-2'>
           <h1>Gêneros</h1>

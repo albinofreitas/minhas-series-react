@@ -11,10 +11,11 @@ import NewGenre from './Genres/NewGenre';
 import EditGenre from './Genres/EditGenre';
 import Series from './Series/Series';
 import NewSerie from './Series/NewSerie';
+import InfoSerie from './Series/InfoSerie';
 
 function Home() {
   return (
-    <div>
+    <div className='container'>
       <div className='row'>
         <div className='col-12 mt-2'>
           <h1>Home</h1>
@@ -28,7 +29,6 @@ function App() {
   return (
     <Router>
       <Header />
-      <div className='container'>
         <Switch>
           <Route path='/' exact component={Home}/>
           <Route path='/generos' exact component={Genres}/>
@@ -37,8 +37,8 @@ function App() {
 
           <Route path='/series' exact component={Series}></Route>
           <Route path='/series/nova' exact component={NewSerie}></Route>
+          <Route path='/series/:id' exact component={InfoSerie}></Route>
         </Switch>
-      </div>
     </Router>
   );
 }

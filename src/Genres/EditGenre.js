@@ -35,7 +35,7 @@ function EditGenre ({match}) {
   }
 
   return (
-    <div>
+    <div className='container'>
       <h1>Gênero</h1>
 
       <form action=''>
@@ -44,8 +44,8 @@ function EditGenre ({match}) {
           <input type="text" value={name} className='form-control' id='name' onChange={onChange} />
         </div>
         <div>
-          <Link to='/generos' className='btn btn-dark'>Voltar</Link>
-          <button type='button' className='btn btn-primary' onClick={saveGenre}>Salvar</button>
+          <Link to='/generos' className='btn btn-dark mr-2'>Voltar</Link>
+          <button type='button' className='btn btn-primary mr-2' onClick={saveGenre}>Salvar</button>
         </div>
       </form>
     </div>
