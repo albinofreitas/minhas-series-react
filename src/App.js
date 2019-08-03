@@ -1,34 +1,43 @@
-import React, { useEffect, useState } from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
-import axios from 'axios'; 
+import React from 'react';
+import {
+  BrowserRouter as Router, 
+  Route,
+  Switch
+} from 'react-router-dom';
 
 import Header from './Header';
-import Genres from './Genres';
-import NewGenre from './NewGenre';
+import Genres from './Genres/Genres';
+import NewGenre from './Genres/NewGenre';
+import EditGenre from './Genres/EditGenre';
+import Series from './Series/Series';
+import NewSerie from './Series/NewSerie';
 
 function Home() {
   return (
-    <h1>Home</h1>
+    <div>
+      <div className='row'>
+        <div className='col-12 mt-2'>
+          <h1>Home</h1>
+        </div>
+      </div>
+    </div>
   );
 }
 
 function App() {
-  const [data, setData] = useState({});
-
-  useEffect(() => {
-    axios.get('/api').then(res => {
-      setData(res.data);
-    });
-  }, []);
-
   return (
     <Router>
-      <div>
-        <Header />
-        <Route path='/' exact component={Home}/>
-        <Route path='/generos' exact component={Genres}/>
-        <Route path='/generos/novo' exact component={NewGenre}/>
-        <pre>{JSON.stringify(data)}</pre>
+      <Header />
+      <div className='container'>
+        <Switch>
+          <Route path='/' exact component={Home}/>
+          <Route path='/generos' exact component={Genres}/>
+          <Route path='/generos/novo' exact component={NewGenre}/>
+          <Route path='/generos/:id' exact component={EditGenre}></Route>
+
+          <Route path='/series' exact component={Series}></Route>
+          <Route path='/series/nova' exact component={NewSerie}></Route>
+        </Switch>
       </div>
     </Router>
   );

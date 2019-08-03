@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Redirect, Link } from 'react-router-dom';
 import axios from 'axios';
 
-function NewGenre() {
+function NewSerie() {
   const [name, setName] = useState('');
   const [success, setSuccess] = useState(false);
 
@@ -10,25 +10,25 @@ function NewGenre() {
     setName(event.target.value);
   }
 
-  const saveGenre = () => {
+  const saveSerie = () => {
     if (!name.length) {
       return;
     }
 
     axios
-      .post('/api/genres', { name })
+      .post('/api/series', { name })
       .then(res => {
         setSuccess(true);
       });
   }
 
   if (success) {
-    return <Redirect to='/generos'/>
+    return <Redirect to='/series'/>
   }
 
   return (
-    <div className='container'>
-      <h1>Gênero</h1>
+    <div>
+      <h1>Serie</h1>
 
       <form action=''>
         <div className='form-group'>
@@ -36,12 +36,12 @@ function NewGenre() {
           <input type="text" value={name} className='form-control' id='name' onChange={onChange} />
         </div>
         <div>
-          <Link to='/generos' className='btn btn-dark'>Voltar</Link>
-          <button type='button' className='btn btn-primary' onClick={saveGenre}>Salvar</button>
+          <Link to='/series' className='btn btn-dark'>Voltar</Link>
+          <button type='button' className='btn btn-primary' onClick={saveSerie}>Salvar</button>
         </div>
       </form>
     </div>
   );
 }
 
-export default NewGenre;
+export default NewSerie;
